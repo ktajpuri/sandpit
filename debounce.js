@@ -25,9 +25,12 @@ const abc = () => {
   console.log("hi");
 };
 
-const debouncedAbc = debounce(abc, 2000, true);
+const debouncedAbc = debounce(abc, 199, true);
+debouncedAbc();
 setTimeout(debouncedAbc, 200);
-setTimeout(debouncedAbc, 2000);
-setTimeout(debouncedAbc, 4000);
-setTimeout(debouncedAbc, 6000);
-setTimeout(debouncedAbc, 8000);
+setTimeout(debouncedAbc, 400);
+setTimeout(debouncedAbc, 600);
+setTimeout(debouncedAbc, 800);
+setTimeout(debouncedAbc, 1000);
+setTimeout(debouncedAbc, 1200);
+setTimeout(debouncedAbc, 1400);
