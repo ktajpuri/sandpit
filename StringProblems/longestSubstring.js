@@ -15,8 +15,9 @@ Output: 3
 /* First attempt
 716 ms, faster than 5.10%
 Memory Usage: 42.8 MB, less than 22.37% 
-
-var lengthOfLongestSubstring = function(s) {
+time taken 154757n
+*/
+var lengthOfLongestSubstring1 = function(s) {
   if(!s) return 0;
   let strArr = [];
   let maxLen = 1;
@@ -34,13 +35,14 @@ var lengthOfLongestSubstring = function(s) {
   }
   return maxLen;
 };
-*/
+
 
 /**
  * @param {string} s
  * @return {number}
  * Runtime: 88 ms, faster than 87.69% 
  * Memory Usage: 39.7 MB, less than 72.57%
+ * time taken 69771n
  */
 var lengthOfLongestSubstring = function(s) {
   let [i, j, max] = [0, 0, 0];
@@ -56,4 +58,6 @@ var lengthOfLongestSubstring = function(s) {
   return max;
 };
 
-lengthOfLongestSubstring("abababc");
+const start = process.hrtime.bigint();
+lengthOfLongestSubstring1("abababc");
+console.log('time taken', process.hrtime.bigint() - start);
