@@ -6,7 +6,7 @@
     "configurations": [
     {
         "name": "longestSubstring",
-        "program": "${workspaceFolder}/StringProblems/longestSubstring.js",
+        "program": "${workspaceFolder}/PuzzleProblems/containerWithMostWater.js",
         "request": "launch",
         "skipFiles": [
             "<node_internals>/**"
