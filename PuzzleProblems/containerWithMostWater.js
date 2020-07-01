@@ -8,6 +8,7 @@ Note: You may not slant the container and n is at least 2.
 Input: [1,8,6,2,5,4,8,3,7]
 Output: 49
 
+https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg
 */
 
 /**
@@ -43,7 +44,7 @@ var maxArea = function(height) {
   return maxArea;
 };
 
-const input1 = [1,8,6,2,5,4,8,3,7];
+const input1 = [9,8,6,2,5,4,8,3,7];
 
 let start = process.hrtime.bigint();
 console.log(maxArea(input1));
