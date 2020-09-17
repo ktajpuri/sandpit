@@ -1,10 +1,17 @@
-const curry = (fn, arity = fn.length) => (...args) =>
-  args.length >= arity
-    ? fn(...args)
-    : curry(fn.bind(this, ...args), arity - args.length);
+const sum = (a, b, c, d) => a + b + c + d;
 
-const sum = (a, b, c) => a + b + c;
+const curry = function curry (fn, arity = fn.length) {
+  return function partCurry(...args) {
+    if (args.length >= arity) {
+      return fn(...args)
+    } else {
+      return curry(fn.bind(this, ...args), arity - args.length)
+    }
+  }
+}
 
 const curriedSum = curry(sum);
 
-const result = curriedSum(11)(12)(13);
+const result = curriedSum(1)(2)(3, 4);
+
+console.log(result);

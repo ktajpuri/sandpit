@@ -8,6 +8,12 @@ Note: You may not slant the container and n is at least 2.
 Input: [1,8,6,2,5,4,8,3,7]
 Output: 49
 
+Input: array = [1, 5, 4, 3]
+Output: 6
+
+Input: array = [3, 1, 2, 4, 5]
+Output: 12
+
 https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg
 */
 
@@ -16,7 +22,7 @@ https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg
  * @return {number}
  */
 
- /* Brute force
+/* Brute force
  Execution Time:  3213514n
 
 var maxArea = function(height) {
@@ -30,12 +36,12 @@ var maxArea = function(height) {
 };
  */
 
-var maxArea = function(height) {
-  let [ maxArea, i, j] = [0, 0, height.length -1];
+var maxArea = function (height) {
+  let [maxArea, i, j] = [0, 0, height.length - 1];
 
-  while(i < j) {
+  while (i < j) {
     maxArea = Math.max((j - i) * Math.min(height[i], height[j]), maxArea);
-    if(height[i] < height[j]) {
+    if (height[i] < height[j]) {
       i++;
     } else {
       j--;
@@ -44,8 +50,8 @@ var maxArea = function(height) {
   return maxArea;
 };
 
-const input1 = [9,8,6,2,5,4,8,3,7];
+const input1 = [3, 1, 2, 4, 5];
 
 let start = process.hrtime.bigint();
 console.log(maxArea(input1));
-console.log('Execution Time: ', process.hrtime.bigint() - start);
+console.log("Execution Time: ", process.hrtime.bigint() - start);

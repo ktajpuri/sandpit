@@ -13,14 +13,19 @@ Output: 3
  * @param {character[][]} grid
  * @return {number}
  */
+// const input = [
+//   ["0", "0","1","0","0"],
+//   ["0", "0","1","0","0"],
+//   ["1", "1","1","1","1"],
+//   ["0", "0","1","0","0"],
+//   ["0", "0","1","0","1"],
+// ];
 const input = [
-  ["0", "0","1","0","0"],
-  ["0", "0","1","0","0"],
-  ["1", "1","1","1","1"],
-  ["0", "0","1","0","0"],
-  ["0", "0","1","0","1"],
+  ["1", "1", "0", "0", "0"],
+  ["1", "1", "0", "0", "0"],
+  ["0", "0", "1", "0", "0"],
+  ["0", "0", "0", "1", "1"],
 ];
-
 var numIslands = function (grid) {
   let count = 0;
   grid.forEach((row, i) => {
@@ -43,9 +48,8 @@ var turnToZero = function (row, col, grid) {
   turnToZero(row, col - 1, grid); // traverse cells to the left
   turnToZero(row, col + 1, grid); // traverse cells to the right
   turnToZero(row - 1, col, grid); // traverse cells above current cell
-  turnToZero(row + 1, col, grid); // traverse cells below current cell 
+  turnToZero(row + 1, col, grid); // traverse cells below current cell
 };
-
 
 console.log(numIslands(input));
 
